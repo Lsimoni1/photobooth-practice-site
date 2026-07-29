@@ -7,7 +7,7 @@ export const siteConfig = {
   phone: "(555) 123-4567",
   serviceArea: "Serving the greater metro area and within 60 miles",
   instagram: "https://instagram.com",
-  bookingNotifyEmail: "hello@snapsquadbooth.com",
+  bookingNotifyEmail: "luke.simoni2001@gmail.com",
 };
 
 export type FrameProduct = {
