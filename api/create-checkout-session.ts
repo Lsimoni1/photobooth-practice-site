@@ -75,7 +75,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       line_items: lineItems,
       success_url: `${origin}/order/success`,
       cancel_url: `${origin}/order`,
-    });
+      // This account has Managed Payments on by default, which requires a
+      // tax_code per product. We're not doing tax calculation for this demo,
+      // so opt out rather than tagging every product with a tax code.
+      managed_payments: { enabled: false },
+    } as Stripe.Checkout.SessionCreateParams);
 
     return res.status(200).json({ url: session.url });
   } catch (err) {
