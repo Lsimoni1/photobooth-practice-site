@@ -5,12 +5,12 @@ import Stripe from "stripe";
 // from the client, or a tampered request could check out for $0.
 // Keep this in sync with src/siteConfig.ts's frameProducts.
 const PRODUCT_CATALOG: Record<string, { name: string; price: number }> = {
-  "classic-white": { name: "Classic White Strip", price: 8 },
-  "blush-floral": { name: "Blush Floral", price: 10 },
-  "gold-foil": { name: "Gold Foil Elegance", price: 12 },
-  "neon-nights": { name: "Neon Nights", price: 10 },
-  "corporate-clean": { name: "Corporate Clean", price: 9 },
-  "holiday-cheer": { name: "Holiday Cheer", price: 9 },
+  "ivory-classic": { name: "Ivory Classic", price: 8 },
+  "crimson-stamp": { name: "Crimson Stamp", price: 10 },
+  "sepia-tone": { name: "Sepia Tone", price: 10 },
+  "midnight-noir": { name: "Midnight Noir", price: 12 },
+  "film-negative": { name: "Film Negative", price: 11 },
+  "matte-minimal": { name: "Matte Minimal", price: 9 },
 };
 
 type CartItemInput = {

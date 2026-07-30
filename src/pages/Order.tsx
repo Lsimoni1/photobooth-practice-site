@@ -44,12 +44,12 @@ export default function Order() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 bg-cream">
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <h1 className="text-4xl font-extrabold text-slate-900">
+        <h1 className="text-4xl font-serif font-bold text-ink">
           Order Custom Photostrip Frames
         </h1>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-ink/70">
           Choose a frame design for your event's photostrips. Each order
           includes a print-ready template for your booth.
         </p>
@@ -60,7 +60,7 @@ export default function Order() {
           {frameProducts.map((product) => (
             <div
               key={product.id}
-              className="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+              className="rounded-2xl border border-ink/10 overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
               <div
                 className="aspect-[3/2] flex items-center justify-center text-4xl"
@@ -69,17 +69,17 @@ export default function Order() {
                 🎞️
               </div>
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-bold text-slate-900">{product.name}</h3>
-                <p className="text-sm text-slate-600 mt-1 flex-1">
+                <h3 className="font-serif font-bold text-ink">{product.name}</h3>
+                <p className="text-sm text-ink/70 mt-1 flex-1">
                   {product.description}
                 </p>
                 <div className="flex items-center justify-between mt-4">
-                  <span className="font-extrabold text-lg text-slate-900">
+                  <span className="font-bold text-lg text-ink">
                     ${product.price}
                   </span>
                   <button
                     onClick={() => addItem(product.id)}
-                    className="px-4 py-2 rounded-full bg-fuchsia-600 text-white text-sm font-semibold hover:bg-fuchsia-700 transition-colors"
+                    className="px-4 py-2 rounded-full bg-crimson text-cream text-sm font-semibold hover:bg-crimson-dark transition-colors"
                   >
                     Add to Cart
                   </button>
@@ -90,13 +90,13 @@ export default function Order() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="sticky top-24 rounded-2xl border border-slate-100 p-6">
-            <h2 className="font-bold text-lg text-slate-900 mb-4">
+          <div className="sticky top-24 rounded-2xl border border-ink/10 p-6 bg-cream">
+            <h2 className="font-serif font-bold text-lg text-ink mb-4">
               Your Order ({totalItems})
             </h2>
 
             {items.length === 0 ? (
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-ink/50">
                 Your cart is empty. Add a frame design to get started.
               </p>
             ) : (
@@ -108,10 +108,10 @@ export default function Order() {
                       style={{ background: item.product.image }}
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-slate-900 truncate">
+                      <p className="text-sm font-semibold text-ink truncate">
                         {item.product.name}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-ink/50">
                         ${item.product.price} each
                       </p>
                     </div>
@@ -120,7 +120,7 @@ export default function Order() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity - 1)
                         }
-                        className="w-6 h-6 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50"
+                        className="w-6 h-6 rounded-full border border-ink/20 text-ink/70 hover:bg-ink/5"
                         aria-label="Decrease quantity"
                       >
                         −
@@ -132,7 +132,7 @@ export default function Order() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity + 1)
                         }
-                        className="w-6 h-6 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50"
+                        className="w-6 h-6 rounded-full border border-ink/20 text-ink/70 hover:bg-ink/5"
                         aria-label="Increase quantity"
                       >
                         +
@@ -141,13 +141,13 @@ export default function Order() {
                   </div>
                 ))}
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between font-bold text-slate-900">
+                <div className="pt-4 border-t border-ink/10 flex items-center justify-between font-bold text-ink">
                   <span>Total</span>
                   <span>${totalPrice.toFixed(2)}</span>
                 </div>
 
                 {error && (
-                  <p className="text-sm text-red-600 bg-red-50 rounded-lg p-3">
+                  <p className="text-sm text-crimson bg-crimson/5 rounded-lg p-3">
                     {error}
                   </p>
                 )}
@@ -155,11 +155,11 @@ export default function Order() {
                 <button
                   onClick={handleCheckout}
                   disabled={checkingOut}
-                  className="w-full py-3 rounded-full bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 transition-colors disabled:opacity-60"
+                  className="w-full py-3 rounded-full bg-crimson text-cream font-semibold hover:bg-crimson-dark transition-colors disabled:opacity-60"
                 >
                   {checkingOut ? "Redirecting to checkout…" : "Checkout with Stripe"}
                 </button>
-                <p className="text-xs text-slate-400 text-center">
+                <p className="text-xs text-ink/40 text-center">
                   Test mode — no real payment will be charged.
                 </p>
               </div>

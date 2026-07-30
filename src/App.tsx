@@ -22,7 +22,7 @@ export default function App() {
     <BrowserRouter>
       <CartProvider>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col bg-white text-slate-800">
+        <div className="min-h-screen flex flex-col bg-cream text-ink">
           <Navbar />
           <main className="flex-1">
             <Routes>

@@ -94,12 +94,12 @@ export default function Booking() {
 
   if (status === "success") {
     return (
-      <div className="max-w-xl mx-auto px-4 sm:px-6 py-24 text-center">
-        <div className="text-6xl mb-6">📅</div>
-        <h1 className="text-3xl font-extrabold text-slate-900">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 py-24 text-center bg-cream">
+        <div className="text-6xl mb-6">🗓️</div>
+        <h1 className="text-3xl font-serif font-bold text-ink">
           Booking request sent!
         </h1>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-ink/70">
           Thanks for reaching out. We'll review your requested date and get
           back to you within 24 hours to confirm.
         </p>
@@ -108,12 +108,12 @@ export default function Booking() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 bg-cream">
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <h1 className="text-4xl font-extrabold text-slate-900">
+        <h1 className="text-4xl font-serif font-bold text-ink">
           Book Your Event
         </h1>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-ink/70">
           Tell us about your event and pick a date — we'll follow up to
           confirm availability and details.
         </p>
@@ -125,54 +125,54 @@ export default function Booking() {
       >
         <div className="space-y-5">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1">
+            <label className="block text-sm font-semibold text-ink/80 mb-1">
               Full name
             </label>
             <input
               name="name"
               type="text"
               required
-              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+              className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
               placeholder="Jane Smith"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-ink/80 mb-1">
                 Email
               </label>
               <input
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+                className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
                 placeholder="jane@example.com"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-ink/80 mb-1">
                 Phone
               </label>
               <input
                 name="phone"
                 type="tel"
                 required
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+                className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
                 placeholder="(555) 123-4567"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1">
+            <label className="block text-sm font-semibold text-ink/80 mb-1">
               Event type
             </label>
             <select
               name="eventType"
               required
               defaultValue=""
-              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+              className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
             >
               <option value="" disabled>
                 Select an event type
@@ -187,59 +187,65 @@ export default function Booking() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-ink/80 mb-1">
                 Location / venue
               </label>
               <input
                 name="location"
                 type="text"
                 required
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+                className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
                 placeholder="Venue name or address"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
+              <label className="block text-sm font-semibold text-ink/80 mb-1">
                 Estimated guests
               </label>
               <input
                 name="guestCount"
                 type="number"
                 min={1}
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+                className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
                 placeholder="100"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1">
+            <label className="block text-sm font-semibold text-ink/80 mb-1">
               Anything else we should know?
             </label>
             <textarea
               name="message"
               rows={4}
-              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+              className="w-full rounded-xl border border-ink/15 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-crimson/30"
               placeholder="Theme, special requests, timeline..."
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-2">
+          <label className="block text-sm font-semibold text-ink/80 mb-2">
             Select event date
           </label>
-          <div className="rounded-2xl border border-slate-200 p-3 sm:p-4 flex justify-center">
+          <div className="rounded-2xl border border-ink/15 p-3 sm:p-4 flex justify-center">
             <DayPicker
               mode="single"
               selected={selectedDate}
               onSelect={setSelectedDate}
               disabled={{ before: new Date() }}
               className="!m-0"
+              style={
+                {
+                  "--rdp-accent-color": "var(--color-crimson)",
+                  "--rdp-accent-background-color": "color-mix(in srgb, var(--color-crimson) 12%, transparent)",
+                } as React.CSSProperties
+              }
             />
           </div>
 
-          <label className="block text-sm font-semibold text-slate-700 mb-2 mt-5">
+          <label className="block text-sm font-semibold text-ink/80 mb-2 mt-5">
             Preferred start time
           </label>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -250,8 +256,8 @@ export default function Booking() {
                 onClick={() => setSelectedTime(time)}
                 className={`px-3 py-2 rounded-xl text-sm font-medium border transition-colors ${
                   selectedTime === time
-                    ? "bg-fuchsia-600 text-white border-fuchsia-600"
-                    : "border-slate-200 text-slate-700 hover:border-fuchsia-300"
+                    ? "bg-crimson text-cream border-crimson"
+                    : "border-ink/15 text-ink/70 hover:border-crimson/40"
                 }`}
               >
                 {time}
@@ -260,7 +266,7 @@ export default function Booking() {
           </div>
 
           {errorMessage && (
-            <p className="text-sm text-red-600 bg-red-50 rounded-lg p-3 mt-5">
+            <p className="text-sm text-crimson bg-crimson/5 rounded-lg p-3 mt-5">
               {errorMessage}
             </p>
           )}
@@ -268,11 +274,11 @@ export default function Booking() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full mt-6 py-3.5 rounded-full bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 transition-colors disabled:opacity-60"
+            className="w-full mt-6 py-3.5 rounded-full bg-crimson text-cream font-semibold hover:bg-crimson-dark transition-colors disabled:opacity-60"
           >
             {status === "sending" ? "Sending request…" : "Request Booking"}
           </button>
-          <p className="text-xs text-slate-400 text-center mt-3">
+          <p className="text-xs text-ink/40 text-center mt-3">
             This sends your request directly to {siteConfig.businessName} —
             we'll confirm availability by email.
           </p>

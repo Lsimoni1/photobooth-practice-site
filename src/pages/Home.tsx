@@ -3,25 +3,25 @@ import { siteConfig } from "../siteConfig";
 
 const features = [
   {
-    icon: "✨",
+    icon: "🎞️",
     title: "Open-Air Booth",
     description:
-      "A sleek, modern setup with professional lighting — no cramped enclosures, just great photos.",
+      "A custom-built wood booth with professional lighting — no cramped enclosures, just great photos.",
   },
   {
     icon: "🖼️",
     title: "Custom Frames",
     description:
-      "Choose from a range of photostrip designs, or we'll create one to match your event's theme.",
+      "Choose from a range of film-inspired photostrip designs, or we'll create one for your event.",
   },
   {
-    icon: "⚡",
+    icon: "📸",
     title: "Instant Prints",
     description:
       "Guests walk away with printed photostrips in seconds, plus digital copies to share instantly.",
   },
   {
-    icon: "🎉",
+    icon: "🕯️",
     title: "Props & Backdrops",
     description:
       "A curated prop box and backdrop options included with every booking, no extra charge.",
@@ -37,31 +37,31 @@ const steps = [
 
 export default function Home() {
   return (
-    <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-fuchsia-50 via-white to-amber-50">
+    <div className="bg-cream">
+      <section className="relative overflow-hidden bg-cream">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-fuchsia-100 text-fuchsia-700 text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-sm font-semibold mb-6">
               Now booking for 2026 events
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-              Photo booth memories,{" "}
-              <span className="text-fuchsia-600">picture perfect.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-ink leading-tight">
+              {siteConfig.tagline},{" "}
+              <span className="text-crimson italic">one frame at a time.</span>
             </h1>
-            <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              {siteConfig.tagline}. We bring the booth, the props, and the fun —
+            <p className="mt-6 text-lg text-ink/70 max-w-xl">
+              {siteConfig.bioLine}. We bring the booth, the props, and the fun —
               you bring the guest list.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/booking"
-                className="px-6 py-3 rounded-full bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 transition-colors shadow-lg shadow-fuchsia-200"
+                className="px-6 py-3 rounded-full bg-crimson text-cream font-semibold hover:bg-crimson-dark transition-colors shadow-lg shadow-crimson/20"
               >
                 Book Your Event
               </Link>
               <Link
                 to="/order"
-                className="px-6 py-3 rounded-full bg-white text-slate-900 font-semibold border border-slate-200 hover:border-slate-300 transition-colors"
+                className="px-6 py-3 rounded-full bg-cream text-ink font-semibold border border-ink/15 hover:border-ink/30 transition-colors"
               >
                 Browse Frame Designs
               </Link>
@@ -69,21 +69,22 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/5] max-w-sm mx-auto rounded-[2rem] bg-gradient-to-br from-fuchsia-500 to-amber-400 p-3 shadow-2xl rotate-2">
-              <div className="w-full h-full rounded-[1.6rem] bg-white grid grid-cols-1 gap-2 p-3">
-                {["😄", "🥳", "😎", "🤩"].map((emoji, i) => (
+            <div className="aspect-[4/5] max-w-sm mx-auto rounded-[2rem] bg-ink p-3 shadow-2xl rotate-2">
+              <div className="w-full h-full rounded-[1.6rem] bg-ink-soft grid grid-cols-1 gap-2 p-3 relative">
+                <span className="absolute top-4 right-4 w-11 h-11 rounded-full bg-cream border-2 border-crimson-light flex items-center justify-center font-serif font-bold text-crimson-light text-xs z-10">
+                  D
+                </span>
+                {[0, 1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="flex-1 rounded-xl bg-slate-100 flex items-center justify-center text-4xl"
-                  >
-                    {emoji}
-                  </div>
+                    className="flex-1 rounded-xl bg-cream/10 border border-cream/10"
+                  />
                 ))}
               </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-5 py-4 -rotate-3 hidden sm:block">
-              <p className="font-caveat text-2xl text-fuchsia-600 font-bold" style={{ fontFamily: "Caveat, cursive" }}>
-                "Best part of the wedding!"
+            <div className="absolute -bottom-6 -left-6 bg-cream rounded-2xl shadow-xl px-5 py-4 -rotate-3 hidden sm:block border border-ink/10">
+              <p className="text-2xl text-crimson italic" style={{ fontFamily: "var(--font-serif)" }}>
+                "Best part of the wedding."
               </p>
             </div>
           </div>
@@ -92,10 +93,10 @@ export default function Home() {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-ink">
             Everything you need for unforgettable photos
           </h2>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-4 text-ink/70">
             From setup to strike-down, we handle the details so you can enjoy your event.
           </p>
         </div>
@@ -103,34 +104,34 @@ export default function Home() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 hover:shadow-lg transition-all"
+              className="p-6 rounded-2xl border border-ink/10 hover:border-crimson/30 hover:shadow-lg transition-all"
             >
               <div className="text-3xl mb-4">{f.icon}</div>
-              <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
-              <p className="text-sm text-slate-600">{f.description}</p>
+              <h3 className="font-serif font-bold text-ink mb-2">{f.title}</h3>
+              <p className="text-sm text-ink/70">{f.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-900 py-20">
+      <section className="bg-ink py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-cream">
               How it works
             </h2>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-cream/60">
               Booking your photo booth is simple — here's what to expect.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s) => (
               <div key={s.number}>
-                <div className="text-fuchsia-400 font-extrabold text-3xl mb-3">
+                <div className="text-crimson-light font-serif font-bold text-3xl mb-3">
                   {s.number}
                 </div>
-                <h3 className="text-white font-bold mb-2">{s.title}</h3>
-                <p className="text-sm text-slate-400">{s.description}</p>
+                <h3 className="text-cream font-bold mb-2">{s.title}</h3>
+                <p className="text-sm text-cream/60">{s.description}</p>
               </div>
             ))}
           </div>
@@ -138,15 +139,15 @@ export default function Home() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-ink">
           Ready to make your event unforgettable?
         </h2>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-ink/70">
           Dates fill up fast — reserve yours today.
         </p>
         <Link
           to="/booking"
-          className="inline-block mt-8 px-8 py-3.5 rounded-full bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 transition-colors shadow-lg shadow-fuchsia-200"
+          className="inline-block mt-8 px-8 py-3.5 rounded-full bg-crimson text-cream font-semibold hover:bg-crimson-dark transition-colors shadow-lg shadow-crimson/20"
         >
           Check Availability
         </Link>
